@@ -48,4 +48,21 @@ public class DiningPhilosophers {
       }
     }
 
+    @Override
+    public void run() {
+      for (int i = 0; i < 3; i++) {
+        think();
+
+        try {
+          table.acquire(); // Захват стола (не более чем для четырех философов)
+          eat();
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        } finally {
+          table.release(); // Освобождение стола
+        }
+      }
+    }
+  }
+}
 
