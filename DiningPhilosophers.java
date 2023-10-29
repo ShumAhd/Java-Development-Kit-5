@@ -12,5 +12,17 @@ public class DiningPhilosophers {
       new Thread(philosophers[i]).start();
     }
   }
+  /**
+   * Класс, представляющий философа.
+   */
+  static class Philosopher implements Runnable {
+    private int id;
+    private Semaphore table;
+
+    public Philosopher(int id, Semaphore table) {
+      this.id = id;
+      this.table = table;
+    }
+
 
 
