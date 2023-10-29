@@ -36,4 +36,16 @@ public class DiningPhilosophers {
       }
     }
 
+    /**
+     * Метод, который философ использует для приема пищи.
+     */
+    private void eat() {
+      System.out.println("Philosopher " + id + " is eating");
+      try {
+        Thread.sleep(500); // Едят 500 миллисекунд
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+
 
