@@ -24,5 +24,16 @@ public class DiningPhilosophers {
       this.table = table;
     }
 
+    /**
+     * Метод, который философ использует для размышления.
+     */
+    private void think() {
+      System.out.println("Philosopher " + id + " is thinking");
+      try {
+        Thread.sleep(500); // Размышляют 500 миллисекунд
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
 
 
